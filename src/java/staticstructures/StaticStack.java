@@ -7,11 +7,16 @@ public class StaticStack implements IStack {
     private final int[] elements;
     private int lastElementIndex;
 
+    public StaticStack(int capacity) {
+        this.elements = new int[capacity];
+        this.lastElementIndex = -1;
+    }
 
     @Override
-    public void push(int element) {
+    public void push(int element) throws Exception {
         if (isFull()) {
-            System.out.println("Stack is full");
+            throw new Exception("Stack is full");
+
         }
         elements[lastElementIndex + 1] = element;
         lastElementIndex++;
@@ -40,9 +45,9 @@ public class StaticStack implements IStack {
 
     @Override
     public int peek() throws Exception {
-        if (lastElementIndex == -1) {
+        if (isEmpty()) {
             System.out.println("Stack is empty");
-            throw new Exception();
+            throw new Exception("Stack is empty");
         }
         return elements[lastElementIndex];
     }
@@ -65,8 +70,5 @@ public class StaticStack implements IStack {
         }
     }
 
-    public StaticStack(int capacity) {
-        this.elements = new int[capacity];
-        this.lastElementIndex = -1;
-    }
+
 }
