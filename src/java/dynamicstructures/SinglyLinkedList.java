@@ -15,7 +15,6 @@ public class SinglyLinkedList {
 
     public void addElement(int data) {
         Node newNode = new Node(data);
-
         if (head == null) {
             head = newNode;
         } else {
@@ -27,18 +26,15 @@ public class SinglyLinkedList {
         }
     }
 
-
     public void displayList() {
         Node current = head;
-
         while (current != null) {
             System.out.println(current.data);
             current = current.next;
         }
     }
 
-    public void removeDuplicates() {
-
+    public void removeDuplicatesSortedList() {
         if (head == null) {
             return;
         }
@@ -57,20 +53,23 @@ public class SinglyLinkedList {
             return;
         }
         Node current = head;
-
         while (current != null && current.next != null) {
             Node fast = current;
-            while(fast.next != null){
-                if(current.data == fast.next.data){
+            while (fast.next != null) {
+                if (current.data == fast.next.data) {
                     fast.next = fast.next.next;
-                }else{
+                } else {
                     fast = fast.next;
                 }
             }
             current = current.next;
         }
     }
-
-
+    public void removeAll(){
+        if(head == null){
+            return;
+        }
+        head = null;
+    }
 }
 
