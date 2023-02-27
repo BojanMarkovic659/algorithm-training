@@ -1,5 +1,8 @@
 package dynamicstructures;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class SinglyLinkedList {
     private Node head;
 
@@ -53,16 +56,15 @@ public class SinglyLinkedList {
             return;
         }
         Node current = head;
-        while (current != null && current.next != null) {
-            Node fast = current;
-            while (fast.next != null) {
-                if (current.data == fast.next.data) {
-                    fast.next = fast.next.next;
-                } else {
-                    fast = fast.next;
-                }
+        Set<Integer> set = new HashSet<>();
+        set.add(current.data);
+        while (current.next != null) {
+            if (set.contains(current.next.data)) {
+                current.next = current.next.next;
+            } else {
+                set.add(current.next.data);
+                current = current.next;
             }
-            current = current.next;
         }
     }
     public void removeAll(){
