@@ -13,7 +13,7 @@ public class Test {
             //testRemoveDuplicatesUnsortedList();
             //testIsSorted();
             //testArrayBinarySearch();
-            testSortingAlgorithms();
+            testArrayBubbleSortAscending();
         } catch (Exception exception) {
             System.err.println("Error: " + exception.getMessage());
         }
@@ -158,13 +158,26 @@ public class Test {
         System.out.println("---------------------------------------------");
         singlyLinkedList.removeAll();
     }
-    public static void testSortingAlgorithms(){
+
+    public static void testArrayBubbleSortAscending(){
         SortingAlgorithms sortingAlgorithms = new SortingAlgorithms();
         int[] array = {6,3,7,2,10,9};
+        System.out.println("Array before method call: ");
         sortingAlgorithms.display(array);
         int[] sortedArray = sortingAlgorithms.arrayBubbleSortAscending(array);
-        System.out.println("---------------------------------------");
+        System.out.println("Array after method call: ");
         sortingAlgorithms.display(sortedArray);
+        System.out.println("---------------------------------------");
+        System.out.println("When all items are the same: ");
+        array = new int[]{2,2,2,2,2};
+        sortingAlgorithms.arrayBubbleSortAscending(array);
+        sortingAlgorithms.display(array);
+        System.out.println("---------------------------------------");
+        System.out.println("When array is empty: ");
+        array = new int[]{};
+        sortingAlgorithms.arrayBubbleSortAscending(array);
+        sortingAlgorithms.display(array);
+
     }
 
     public static void testArrayBinarySearch() {
