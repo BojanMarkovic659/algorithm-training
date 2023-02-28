@@ -4,10 +4,9 @@ import sorting.SortingAlgorithms;
 import searchalgorithms.SearchAlgorithms;
 import staticstructures.StaticStack;
 
-
 public class Test {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         try {
             //testStaticStack();
             //testRemoveDuplicatesSortedList();
