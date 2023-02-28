@@ -1,5 +1,6 @@
 import definitions.IStack;
 import dynamicstructures.SinglyLinkedList;
+import sorting.SortingAlgorithms;
 import searchalgorithms.SearchAlgorithms;
 import staticstructures.StaticStack;
 
@@ -7,10 +8,12 @@ public class Test {
 
     public static void main(String[] args) throws Exception {
         try {
-//            testStaticStack();
-//            testRemoveDuplicatesSortedList();
-            testRemoveDuplicatesUnsortedList();
-
+            //testStaticStack();
+            //testRemoveDuplicatesSortedList();
+            //testRemoveDuplicatesUnsortedList();
+            //testIsSorted();
+            //testArrayBinarySearch();
+            testSortingAlgorithms();
         } catch (Exception exception) {
             System.err.println("Error: " + exception.getMessage());
         }
@@ -108,8 +111,6 @@ public class Test {
         singlyLinkedList.displayList();
         System.out.println("---------------------------------------------");
         singlyLinkedList.removeAll();
-
-
     }
 
     public static void testRemoveDuplicatesUnsortedList() {
@@ -157,6 +158,14 @@ public class Test {
         System.out.println("---------------------------------------------");
         singlyLinkedList.removeAll();
     }
+    public static void testSortingAlgorithms(){
+        SortingAlgorithms sortingAlgorithms = new SortingAlgorithms();
+        int[] array = {6,3,7,2,10,9};
+        sortingAlgorithms.display(array);
+        int[] sortedArray = sortingAlgorithms.arrayBubbleSortAscending(array);
+        System.out.println("---------------------------------------");
+        sortingAlgorithms.display(sortedArray);
+    }
 
     public static void testArrayBinarySearch() {
         SearchAlgorithms searchAlgorithms = new SearchAlgorithms();
@@ -203,9 +212,6 @@ public class Test {
             System.out.println("Expected exception, got: " + e.getMessage());
         }
     }
-
-
 }
-
 
 
