@@ -10,7 +10,7 @@ public class Test {
             //testStaticStack();
             //testRemoveDuplicatesSortedList();
             //testRemoveDuplicatesUnsortedList();
-            //testIsSorted();
+            testIsSorted();
             testArrayBinarySearch();
         } catch (Exception exception) {
             System.err.println("Error: " + exception.getMessage());
@@ -172,11 +172,14 @@ public class Test {
         System.out.println("Expecting result 3: got: " + searchAlgorithms.arrayBinarySearch(array, 5));
         try {
             array = new int[]{1, 5, 7, 3, 8};
-            System.out.println("Expecting result : exception : got: " + searchAlgorithms.arrayBinarySearch(array, 2));
-            array = null;
-            System.out.println("Expecting result exception : got : " + searchAlgorithms.arrayBinarySearch(array, 4));
+            searchAlgorithms.arrayBinarySearch(array, 2);
         } catch (Exception e) {
-            System.out.println("Error : " + e.getMessage());
+            System.out.println("Expecting result : exception : got: " + e.getMessage());
+        }
+        try {
+            searchAlgorithms.arrayBinarySearch(null, 4);
+        } catch (Exception e) {
+            System.out.println("Expecting result : exception : got: " + e.getMessage());
         }
     }
 
@@ -194,11 +197,11 @@ public class Test {
         System.out.println("Expected true, got: " + searchAlgorithms.isSorted(array));
         array = new int[]{1, 2, 3, 4, 4, 4, 5, 6, 7};
         System.out.println("Expected true, got: " + searchAlgorithms.isSorted(array));
-        array = null;
+        System.out.println("----------------------------------------");
         try {
-            System.out.println("Expected exception, got: " + searchAlgorithms.isSorted(array));
+            searchAlgorithms.isSorted(array);
         } catch (Exception e) {
-            System.out.println("Error : " + e.getMessage());
+            System.out.println("Expected exception, got: " + e.getMessage());
         }
     }
 }
