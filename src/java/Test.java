@@ -1,5 +1,7 @@
 import definitions.IStack;
 import dynamicstructures.SinglyLinkedList;
+import searchalgorithms.SearchAlgorithms;
+import sorting.SortingAlgorithms;
 import staticstructures.StaticStack;
 
 public class Test {
@@ -8,7 +10,8 @@ public class Test {
         try {
             //testStaticStack();
             //testRemoveDuplicatesSortedList();
-            testRemoveDuplicatesUnsortedList();
+            //testRemoveDuplicatesUnsortedList();
+            testBinarySearchAlgorithms();
         }catch (Exception exception){
             System.err.println("Error: " + exception.getMessage());
         }
@@ -154,6 +157,22 @@ public class Test {
         singlyLinkedList.displayList();
         System.out.println("---------------------------------------------");
         singlyLinkedList.removeAll();
+    }
+    public static void testBinarySearchAlgorithms() throws Exception {
+        SearchAlgorithms searchAlgorithms = new SearchAlgorithms();
+        int[] array = {1,2,3,4,5,6,7,8,9};
+        System.out.println("Expected true, got: " + searchAlgorithms.isSorted(array));
+        try {
+            System.out.println("Testing arrayBinarySearch method");
+            System.out.println("Expecting result 7: got: " + searchAlgorithms.arrayBinarySearch(array,8));
+
+            array = new int[]{1, 5, 7, 3, 8};
+            System.out.println("Expected false, got: " + searchAlgorithms.isSorted(array));
+
+
+        } catch (Exception e) {
+            System.out.println("Error : " + e.getMessage());
+        }
     }
 }
 
