@@ -24,6 +24,21 @@ public class SortingAlgorithms {
         return array;
     }
 
+    public int[] arrayInsertionSortAscending(int[] array){
+        for (int i = 1; i < array.length; i++) {
+            int element = array[i];
+            for (int j = i - 1; j >= 0; j--) {
+                if (array[j] > element) {
+                    array[j + 1] = array[j];
+                    array[j] = element;
+                } else {
+                    break;
+                }
+            }
+        }
+        return array;
+    }
+
     public void display(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
