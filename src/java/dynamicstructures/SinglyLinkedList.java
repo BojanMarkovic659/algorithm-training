@@ -18,6 +18,7 @@ public class SinglyLinkedList {
 
     public void addElement(int data) {
         Node newNode = new Node(data);
+
         if (head == null) {
             head = newNode;
         } else {
@@ -29,8 +30,10 @@ public class SinglyLinkedList {
         }
     }
 
+
     public void displayList() {
         Node current = head;
+
         while (current != null) {
             System.out.println(current.data);
             current = current.next;
@@ -67,8 +70,28 @@ public class SinglyLinkedList {
             }
         }
     }
-    public void removeAll(){
-        if(head == null){
+
+    public int findMiddle() throws Exception {
+        if (head == null) {
+            throw new Exception("List is empty");
+        }
+        Node slow = head;
+        Node fast = head;
+        Node prev = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            prev = slow;
+            slow = slow.next;
+        }
+        if (fast == null) {
+            return prev.data;
+        } else {
+            return slow.data;
+        }
+    }
+
+    public void removeAll() {
+        if (head == null) {
             return;
         }
         head = null;

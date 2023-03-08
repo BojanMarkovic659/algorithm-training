@@ -5,13 +5,12 @@ import staticstructures.StaticStack;
 
 public class Test {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         try {
-            //testStaticStack();
-            //testRemoveDuplicatesSortedList();
-            //testRemoveDuplicatesUnsortedList();
-            testIsSorted();
-            testArrayBinarySearch();
+//            testStaticStack();
+//            testRemoveDuplicatesSortedList();
+//            testRemoveDuplicatesUnsortedList();
+            testFindMiddle();
         } catch (Exception exception) {
             System.err.println("Error: " + exception.getMessage());
         }
@@ -159,18 +158,18 @@ public class Test {
         singlyLinkedList.removeAll();
     }
 
-    public static void testArrayBinarySearch() throws Exception {
+    public static void testArrayBinarySearch() {
         SearchAlgorithms searchAlgorithms = new SearchAlgorithms();
-
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        System.out.println("Testing arrayBinarySearch method");
-        System.out.println("Expecting result 7: got: " + searchAlgorithms.arrayBinarySearch(array, 8));
-        array = new int[]{1, 2, 3, 6, 8, 11, 15, 18, 24};
-        System.out.println("Expecting result 1: got: " + searchAlgorithms.arrayBinarySearch(array, 2));
-        System.out.println("Expecting result -1: got: " + searchAlgorithms.arrayBinarySearch(array, 12));
-        array = new int[]{5, 5, 5, 5, 5, 5, 5};
-        System.out.println("Expecting result 3: got: " + searchAlgorithms.arrayBinarySearch(array, 5));
         try {
+            int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+            System.out.println("Testing arrayBinarySearch method");
+            System.out.println("Expecting result 7: got: " + searchAlgorithms.arrayBinarySearch(array, 8));
+            array = new int[]{1, 2, 3, 6, 8, 11, 15, 18, 24};
+            System.out.println("Expecting result 1: got: " + searchAlgorithms.arrayBinarySearch(array, 2));
+            System.out.println("Expecting result -1: got: " + searchAlgorithms.arrayBinarySearch(array, 12));
+            array = new int[]{5, 5, 5, 5, 5, 5, 5};
+            System.out.println("Expecting result 3: got: " + searchAlgorithms.arrayBinarySearch(array, 5));
+
             array = new int[]{1, 5, 7, 3, 8};
             searchAlgorithms.arrayBinarySearch(array, 2);
         } catch (Exception e) {
@@ -204,6 +203,35 @@ public class Test {
             System.out.println("Expected exception, got: " + e.getMessage());
         }
     }
+
+    public static void testFindMiddle() throws Exception {
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
+        System.out.println("Testing findMiddle method");
+        singlyLinkedList.addElement(1);
+        singlyLinkedList.addElement(7);
+        singlyLinkedList.addElement(2);
+        singlyLinkedList.addElement(5);
+        singlyLinkedList.addElement(4);
+        singlyLinkedList.addElement(2);
+        singlyLinkedList.displayList();
+        System.out.println("Expecting result 2: got: " + singlyLinkedList.findMiddle());
+        singlyLinkedList.removeAll();
+        singlyLinkedList.addElement(1);
+        singlyLinkedList.addElement(3);
+        singlyLinkedList.addElement(10);
+        singlyLinkedList.addElement(2);
+        singlyLinkedList.addElement(8);
+        System.out.println("Expecting result 10: got: " + singlyLinkedList.findMiddle());
+        singlyLinkedList.removeAll();
+        try {
+            singlyLinkedList.findMiddle();
+        } catch (Exception e) {
+            System.out.println("Expecting result : exception : got: " + e.getMessage());
+        }
+        singlyLinkedList.addElement(1);
+        System.out.println("Expecting result 1 : got : " + singlyLinkedList.findMiddle());
+    }
 }
+
 
 
