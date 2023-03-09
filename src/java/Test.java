@@ -10,7 +10,8 @@ public class Test {
 //            testStaticStack();
 //            testRemoveDuplicatesSortedList();
 //            testRemoveDuplicatesUnsortedList();
-            testFindMiddle();
+//            testFindMiddle();
+            testIsPalindrome();
         } catch (Exception exception) {
             System.err.println("Error: " + exception.getMessage());
         }
@@ -231,6 +232,41 @@ public class Test {
         singlyLinkedList.addElement(1);
         System.out.println("Expecting result 1 : got : " + singlyLinkedList.findMiddle());
     }
+    public static void testIsPalindrome(){
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
+        System.out.println("Testing isPalindrome method");
+        System.out.println("Expected true, got: " + singlyLinkedList.isPalindrome());
+        System.out.println("----------------------------------------");
+        singlyLinkedList.addElement(5);
+        System.out.println("Expected true, got: " + singlyLinkedList.isPalindrome());
+        singlyLinkedList.removeAll();
+        System.out.println("----------------------------------------");
+        singlyLinkedList.addElement(10);
+        singlyLinkedList.addElement(22);
+        singlyLinkedList.addElement(3);
+        singlyLinkedList.addElement(22);
+        singlyLinkedList.addElement(10);
+        System.out.println("Expected true, got: " + singlyLinkedList.isPalindrome());
+        System.out.println("----------------------------------------");
+        singlyLinkedList.removeAll();
+        singlyLinkedList.addElement(5);
+        singlyLinkedList.addElement(11);
+        singlyLinkedList.addElement(22);
+        singlyLinkedList.addElement(22);
+        singlyLinkedList.addElement(11);
+        singlyLinkedList.addElement(5);
+        System.out.println("Expected true, got: " + singlyLinkedList.isPalindrome());
+        System.out.println("----------------------------------------");
+        singlyLinkedList.removeAll();
+        singlyLinkedList.addElement(10);
+        singlyLinkedList.addElement(26);
+        singlyLinkedList.addElement(3);
+        singlyLinkedList.addElement(2);
+        singlyLinkedList.addElement(10);
+        System.out.println("Expected false, got: " + singlyLinkedList.isPalindrome());
+        System.out.println("----------------------------------------");
+    }
+
 }
 
 
