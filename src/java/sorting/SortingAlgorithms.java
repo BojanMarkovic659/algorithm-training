@@ -24,7 +24,10 @@ public class SortingAlgorithms {
         return array;
     }
 
-    public int[] arrayInsertionSortAscending(int[] array){
+    public int[] arrayInsertionSortAscending(int[] array) throws Exception{
+        if(array == null){
+            throw new Exception("Array is null.");
+        }
         for (int i = 1; i < array.length; i++) {
             int element = array[i];
             for (int j = i - 1; j >= 0; j--) {

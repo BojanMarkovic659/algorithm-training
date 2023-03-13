@@ -246,7 +246,7 @@ public class Test {
             System.out.println("Expected exception, got: " + e.getMessage());
         }
     }
-    public static void testArrayInsertionSortAscending(){
+    public static void testArrayInsertionSortAscending() throws Exception{
         SortingAlgorithms sortingAlgorithms = new SortingAlgorithms();
         int[] array = {2,7,5,4,10,8};
         System.out.println("Array before method call: ");
@@ -269,6 +269,23 @@ public class Test {
         array = new int[]{};
         sortingAlgorithms.arrayInsertionSortAscending(array);
         sortingAlgorithms.display(array);
+        System.out.println("---------------------------------------");
+        System.out.println("When array is sorted ascending order: ");
+        array = new int[]{2,6,7,9,12,16};
+        sortingAlgorithms.arrayInsertionSortAscending(array);
+        sortingAlgorithms.display(array);
+        System.out.println("---------------------------------------");
+        System.out.println("When array is sorted descending order: ");
+        array = new int[]{18,11,10,5,3,1};
+        sortingAlgorithms.arrayInsertionSortAscending(array);
+        sortingAlgorithms.display(array);
+        try {
+            array = null;
+            sortingAlgorithms.arrayInsertionSortAscending(array);
+            sortingAlgorithms.display(array);
+        }catch (Exception e){
+            System.out.println("Expecting result : exception : got : "+e.getMessage());
+        }
     }
 }
 
