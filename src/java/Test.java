@@ -1,16 +1,20 @@
 import definitions.IStack;
 import dynamicstructures.SinglyLinkedList;
+import sorting.SortingAlgorithms;
 import searchalgorithms.SearchAlgorithms;
 import staticstructures.StaticStack;
+
 
 public class Test {
 
     public static void main(String[] args) throws Exception {
         try {
-//            testStaticStack();
-//            testRemoveDuplicatesSortedList();
-            testRemoveDuplicatesUnsortedList();
-
+            //testStaticStack();
+            //testRemoveDuplicatesSortedList();
+            //testRemoveDuplicatesUnsortedList();
+            //testIsSorted();
+            //testArrayBinarySearch();
+            testArrayBubbleSortAscending();
         } catch (Exception exception) {
             System.err.println("Error: " + exception.getMessage());
         }
@@ -108,8 +112,6 @@ public class Test {
         singlyLinkedList.displayList();
         System.out.println("---------------------------------------------");
         singlyLinkedList.removeAll();
-
-
     }
 
     public static void testRemoveDuplicatesUnsortedList() {
@@ -158,6 +160,47 @@ public class Test {
         singlyLinkedList.removeAll();
     }
 
+    public static void testArrayBubbleSortAscending() throws Exception {
+        SortingAlgorithms sortingAlgorithms = new SortingAlgorithms();
+        int[] array = {6, 3, 7, 2, 10, 9};
+        System.out.println("Array before method call: ");
+        sortingAlgorithms.display(array);
+        int[] sortedArray = sortingAlgorithms.arrayBubbleSortAscending(array);
+        System.out.println("Array after method call: ");
+        sortingAlgorithms.display(sortedArray);
+        System.out.println("---------------------------------------");
+        System.out.println("When all items are the same: ");
+        array = new int[]{2, 2, 2, 2, 2};
+        sortingAlgorithms.arrayBubbleSortAscending(array);
+        sortingAlgorithms.display(array);
+        System.out.println("---------------------------------------");
+        System.out.println("When array is empty: ");
+        array = new int[]{};
+        sortingAlgorithms.arrayBubbleSortAscending(array);
+        sortingAlgorithms.display(array);
+        System.out.println("---------------------------------------");
+        array = new int[]{2, 5, 8, 10, 15, 20};
+        System.out.println("When array is sorted ascending order: ");
+        sortingAlgorithms.arrayBubbleSortAscending(array);
+        sortingAlgorithms.display(array);
+        System.out.println("---------------------------------------");
+        array = new int[]{15, 11, 9, 7, 4, 1};
+        System.out.println("When array is sorted descending order: ");
+        sortingAlgorithms.arrayBubbleSortAscending(array);
+        sortingAlgorithms.display(array);
+        System.out.println("---------------------------------------");
+        System.out.println("When array is null: ");
+        try {
+            array = null;
+            sortingAlgorithms.arrayBubbleSortAscending(array);
+            sortingAlgorithms.display(array);
+        } catch (Exception e) {
+            System.out.println("Expecting result : exception , got: " + e.getMessage());
+        }
+
+
+    }
+
     public static void testArrayBinarySearch() {
         SearchAlgorithms searchAlgorithms = new SearchAlgorithms();
         try {
@@ -203,9 +246,6 @@ public class Test {
             System.out.println("Expected exception, got: " + e.getMessage());
         }
     }
-
-
 }
-
 
 
