@@ -1,7 +1,10 @@
 package sorting;
 
 public class SortingAlgorithms {
-    public int[] arrayBubbleSortAscending(int[] array) {
+    public int[] arrayBubbleSortAscending(int[] array) throws Exception {
+        if (array == null) {
+            throw new Exception("Array is null.");
+        }
         boolean changed = false;
         for (int i = 0; i < array.length - 1; i++) {
             changed = false;
