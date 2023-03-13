@@ -9,8 +9,8 @@ public class Test {
         try {
 //            testStaticStack();
 //            testRemoveDuplicatesSortedList();
-//            testRemoveDuplicatesUnsortedList();
-            testFindMiddle();
+            testRemoveDuplicatesUnsortedList();
+
         } catch (Exception exception) {
             System.err.println("Error: " + exception.getMessage());
         }
@@ -204,33 +204,7 @@ public class Test {
         }
     }
 
-    public static void testFindMiddle() throws Exception {
-        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
-        System.out.println("Testing findMiddle method");
-        singlyLinkedList.addElement(1);
-        singlyLinkedList.addElement(7);
-        singlyLinkedList.addElement(2);
-        singlyLinkedList.addElement(5);
-        singlyLinkedList.addElement(4);
-        singlyLinkedList.addElement(2);
-        singlyLinkedList.displayList();
-        System.out.println("Expecting result 2: got: " + singlyLinkedList.findMiddle());
-        singlyLinkedList.removeAll();
-        singlyLinkedList.addElement(1);
-        singlyLinkedList.addElement(3);
-        singlyLinkedList.addElement(10);
-        singlyLinkedList.addElement(2);
-        singlyLinkedList.addElement(8);
-        System.out.println("Expecting result 10: got: " + singlyLinkedList.findMiddle());
-        singlyLinkedList.removeAll();
-        try {
-            singlyLinkedList.findMiddle();
-        } catch (Exception e) {
-            System.out.println("Expecting result : exception : got: " + e.getMessage());
-        }
-        singlyLinkedList.addElement(1);
-        System.out.println("Expecting result 1 : got : " + singlyLinkedList.findMiddle());
-    }
+
 }
 
 
