@@ -1,7 +1,10 @@
 package dynamicstructures;
 
+import staticstructures.StaticStack;
+
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Stack;
 
 public class SinglyLinkedList {
     private Node head;
@@ -69,6 +72,30 @@ public class SinglyLinkedList {
                 current = current.next;
             }
         }
+    }
+
+    public boolean isPalindrome() {
+        if (head == null || head.next == null) {
+            return true;
+        }
+        Node slow = head;
+        Node fast = head;
+        Stack<Integer> stack = new Stack<>();
+        while (fast != null && fast.next != null) {
+            stack.push(slow.data);
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        if (fast != null) {
+            slow = slow.next;
+        }
+        while (slow != null) {
+            if (slow.data != stack.pop()) {
+                return false;
+            }
+            slow = slow.next;
+        }
+        return true;
     }
 
     public void removeAll() {
