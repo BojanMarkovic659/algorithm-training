@@ -98,6 +98,24 @@ public class SinglyLinkedList {
         return true;
     }
 
+    public int findMiddle() throws Exception {
+        if (head == null) {
+            throw new Exception("List is empty");
+        }
+        Node slow = head;
+        Node fast = head;
+        Node prev = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            prev = slow;
+            slow = slow.next;
+        }
+        if (fast == null) {
+            return prev.data;
+        } else {
+            return slow.data;
+        }
+    }
     public void removeAll() {
         if (head == null) {
             return;
