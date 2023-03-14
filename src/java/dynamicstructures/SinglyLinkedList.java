@@ -74,25 +74,6 @@ public class SinglyLinkedList {
         }
     }
 
-    public int findMiddle() throws Exception {
-        if (head == null) {
-            throw new Exception("List is empty");
-        }
-        Node slow = head;
-        Node fast = head;
-        Node prev = head;
-        while (fast != null && fast.next != null) {
-            fast = fast.next.next;
-            prev = slow;
-            slow = slow.next;
-        }
-        if (fast == null) {
-            return prev.data;
-        } else {
-            return slow.data;
-        }
-    }
-
     public boolean isPalindrome() {
         if (head == null || head.next == null) {
             return true;
