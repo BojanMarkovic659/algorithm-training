@@ -41,8 +41,29 @@ public class SinglyLinkedList {
             current = current.next;
         }
     }
-
-    public void removeDuplicatesSortedList() throws Exception {
+    public int removeFromEnd() throws Exception{
+        if(head == null){
+            throw new Exception("List is empty");
+        }
+        Node current = head;
+        while(current.next.next != null){
+            current = current.next;
+        }
+        int element = current.next.data;
+        current.next = null;
+        return element;
+    }
+    public int lastElement() throws Exception{
+        if(head == null){
+            throw new Exception("List is empty");
+        }
+        Node current = head;
+        while (current.next != null){
+            current = current.next;
+        }
+        return current.data;
+    }
+    public void removeDuplicatesSortedList() throws Exception{
         if (head == null) {
             return;
         }
