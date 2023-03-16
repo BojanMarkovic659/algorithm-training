@@ -31,6 +31,21 @@ public class SinglyLinkedList {
             current.next = newNode;
         }
     }
+    public void addFirstElement(int data){
+        Node newNode = new Node(data);
+        if (head != null) {
+            newNode.next = head;
+        }
+        head = newNode;
+    }
+    public int removeFirstElement() throws Exception{
+        if(head == null){
+            throw new Exception("List is empty");
+        }
+        int element = head.data;
+        head = head.next;
+        return element;
+    }
 
 
     public void displayList() {
@@ -62,6 +77,12 @@ public class SinglyLinkedList {
             current = current.next;
         }
         return current.data;
+    }
+    public int firstElement()throws Exception{
+        if(head == null){
+            throw new Exception("List is empty");
+        }
+        return head.data;
     }
     public void removeDuplicatesSortedList() throws Exception{
         if (head == null) {

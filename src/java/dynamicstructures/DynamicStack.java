@@ -13,7 +13,7 @@ public class DynamicStack implements IStack {
 
     @Override
     public void push(int element) throws Exception {
-        list.addElement(element);
+        list.addFirstElement(element);
         count++;
     }
 
@@ -24,7 +24,7 @@ public class DynamicStack implements IStack {
 
     @Override
     public int size() {
-       return count;
+       return Integer.MAX_VALUE;
     }
 
     @Override
@@ -32,7 +32,7 @@ public class DynamicStack implements IStack {
         if(isEmpty()){
             throw new Exception("Stack is empty");
         }
-        int element = list.removeFromEnd();
+        int element = list.removeFirstElement();
         count--;
         return  element;
     }
@@ -42,7 +42,7 @@ public class DynamicStack implements IStack {
         if(isEmpty()){
             throw new Exception("List is empty");
         }
-            return list.lastElement();
+            return list.firstElement();
     }
 
     @Override
