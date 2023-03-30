@@ -1,6 +1,5 @@
 package dynamicstructures;
 
-import staticstructures.StaticStack;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -43,7 +42,7 @@ public class SinglyLinkedList {
         }
     }
 
-    public void removeDuplicatesSortedList() {
+    public void removeDuplicatesSortedList() throws Exception {
         if (head == null) {
             return;
         }
@@ -52,6 +51,9 @@ public class SinglyLinkedList {
             if (current.data == current.next.data) {
                 current.next = current.next.next;
             } else {
+                if(current.data > current.next.data){
+                    throw new Exception("List is not sorted");
+                }
                 current = current.next;
             }
         }
