@@ -118,6 +118,24 @@ public class SinglyLinkedList {
             return slow.data;
         }
     }
+    public void removeLastOccurrence(int element){
+        Node current = head;
+        Node prev = head;
+
+        while (current.next != null){
+            if(current.next.data == element){
+                prev = current;
+            }
+            current = current.next;
+        }
+        if(prev != head){
+            prev.next = prev.next.next;
+        }
+
+        if(head.data == element && head == prev){
+            head = head.next;
+        }
+    }
     public void removeAll() {
         if (head == null) {
             return;
