@@ -32,6 +32,23 @@ public class SinglyLinkedList {
         }
     }
 
+    public void addFirstElement(int data) {
+        Node newNode = new Node(data);
+        if (head != null) {
+            newNode.next = head;
+        }
+        head = newNode;
+    }
+
+    public int removeFirstElement() throws Exception {
+        if (head == null) {
+            throw new Exception("List is empty");
+        }
+        int element = head.data;
+        head = head.next;
+        return element;
+    }
+
 
     public void displayList() {
         Node current = head;
@@ -40,6 +57,42 @@ public class SinglyLinkedList {
             System.out.println(current.data);
             current = current.next;
         }
+    }
+
+    public int removeFromEnd() throws Exception {
+        if (head == null) {
+            throw new Exception("List is empty");
+        }
+        if (head.next == null) {
+            int element = head.data;
+            head = null;
+            return element;
+        }
+        Node current = head;
+        while (current.next.next != null) {
+            current = current.next;
+        }
+        int element = current.next.data;
+        current.next = null;
+        return element;
+    }
+
+    public int lastElement() throws Exception {
+        if (head == null) {
+            throw new Exception("List is empty");
+        }
+        Node current = head;
+        while (current.next != null) {
+            current = current.next;
+        }
+        return current.data;
+    }
+
+    public int firstElement() throws Exception {
+        if (head == null) {
+            throw new Exception("List is empty");
+        }
+        return head.data;
     }
 
     public void removeDuplicatesSortedList() throws Exception {

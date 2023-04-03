@@ -1,5 +1,6 @@
 import definitions.IStack;
 import definitions.IStackGenerics;
+import dynamicstructures.DynamicStack;
 import dynamicstructures.SinglyLinkedList;
 import sorting.SortingAlgorithms;
 import searchalgorithms.SearchAlgorithms;
@@ -18,10 +19,11 @@ public class Test {
             //testArrayInsertionSortAscending();
             //testIsPalindrome();
             //testArrayBubbleSortAscending();
+            //testStaticStackGenerics();
+            //testRemoveLastOccurrence();
+            testDynamicStack();
             //testFindMiddle();
-            //testStaticStackGenerics();
-            //testStaticStackGenerics();
-            testRemoveLastOccurrence();
+
         } catch (Exception exception) {
             System.err.println("Error: " + exception.getMessage());
         }
@@ -354,6 +356,30 @@ public class Test {
         singlyLinkedList.addElement(10);
         System.out.println("Expected false, got: " + singlyLinkedList.isPalindrome());
         System.out.println("----------------------------------------");
+    }
+    public static void testDynamicStack() throws Exception{
+        IStack stack = new DynamicStack();
+        System.out.println("Testing push method");
+        stack.push(5);
+        stack.push(7);
+        stack.push(10);
+        stack.push(11);
+        stack.push(14);
+        stack.display();
+        System.out.println("---------------------------------------------");
+        System.out.println("Testing pop method");
+        stack.pop();
+        stack.pop();
+        stack.display();
+        System.out.println("---------------------------------------------");
+        System.out.println("Testing peek method");
+        System.out.println("First element: " + stack.peek());
+        System.out.println("---------------------------------------------");
+        System.out.println("Testing size method");
+        System.out.println("Stack size " + stack.size());
+        System.out.println("---------------------------------------------");
+        System.out.println("Testing count method");
+        System.out.println("Number of elements " + stack.count());
     }
     public static void testStaticStackGenerics() throws Exception{
         IStackGenerics<Integer> integerStackGenerics = new StaticStackGenerics<>(10);
