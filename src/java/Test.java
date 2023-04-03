@@ -11,7 +11,7 @@ public class Test {
     public static void main(String[] args) {
         try {
             //testStaticStack();
-            //testRemoveDuplicatesSortedList();
+            testRemoveDuplicatesSortedList();
             //testRemoveDuplicatesUnsortedList();
             //testIsSorted();
             //testArrayBinarySearch();
@@ -19,7 +19,7 @@ public class Test {
             //testIsPalindrome();
             //testArrayBubbleSortAscending();
             //testFindMiddle();
-            testStaticStackGenerics();
+            //testStaticStackGenerics();
         } catch (Exception exception) {
             System.err.println("Error: " + exception.getMessage());
         }
@@ -51,7 +51,7 @@ public class Test {
 
     }
 
-    public static void testRemoveDuplicatesSortedList() {
+    public static void testRemoveDuplicatesSortedList() throws Exception{
         SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         System.out.println("Testing addElement method");
         singlyLinkedList.addElement(5);
@@ -115,8 +115,21 @@ public class Test {
         System.out.println("After executing the method");
         singlyLinkedList.removeDuplicatesSortedList();
         singlyLinkedList.displayList();
-        System.out.println("---------------------------------------------");
         singlyLinkedList.removeAll();
+        System.out.println("---------------------------------------------");
+        System.out.println("Testing removeDuplicatesSortedList method when we don't have a sorted list");
+        singlyLinkedList.addElement(3);
+        singlyLinkedList.addElement(4);
+        singlyLinkedList.addElement(5);
+        singlyLinkedList.addElement(2);
+        singlyLinkedList.addElement(9);
+        try {
+            singlyLinkedList.removeDuplicatesSortedList();
+        }catch (Exception e){
+            System.out.println("Expecting result : exception , got: " + e.getMessage());
+        }
+
+
     }
 
     public static void testRemoveDuplicatesUnsortedList() {
