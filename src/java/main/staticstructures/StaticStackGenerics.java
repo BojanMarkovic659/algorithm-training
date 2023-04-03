@@ -1,6 +1,6 @@
-package staticstructures;
+package main.staticstructures;
 
-import definitions.IStackGenerics;
+import main.definitions.IStackGenerics;
 
 public class StaticStackGenerics<T> implements IStackGenerics<T> {
     private final T[] elements;

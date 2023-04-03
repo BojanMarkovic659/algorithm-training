@@ -1,4 +1,4 @@
-package sorting;
+package main.sorting;
 
 public class SortingAlgorithms {
     public int[] arrayBubbleSortAscending(int[] array) throws Exception {

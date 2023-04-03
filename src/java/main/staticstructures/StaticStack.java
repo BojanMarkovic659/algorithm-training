@@ -1,6 +1,6 @@
-package staticstructures;
+package main.staticstructures;
 
-import definitions.IStack;
+import main.definitions.IStack;
 
 public class StaticStack implements IStack {
 
