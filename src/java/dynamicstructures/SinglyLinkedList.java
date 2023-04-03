@@ -51,7 +51,7 @@ public class SinglyLinkedList {
             if (current.data == current.next.data) {
                 current.next = current.next.next;
             } else {
-                if(current.data > current.next.data){
+                if (current.data > current.next.data) {
                     throw new Exception("List is not sorted");
                 }
                 current = current.next;
@@ -118,24 +118,27 @@ public class SinglyLinkedList {
             return slow.data;
         }
     }
-    public void removeLastOccurrence(int element){
+
+    public void removeLastOccurrence(int element) throws Exception {
+        if (head == null) {
+            throw new Exception("List is empty");
+        }
         Node current = head;
         Node prev = head;
 
-        while (current.next != null){
-            if(current.next.data == element){
+        while (current.next != null) {
+            if (current.next.data == element) {
                 prev = current;
             }
             current = current.next;
         }
-        if(prev != head){
+        if (prev != head) {
             prev.next = prev.next.next;
-        }
-
-        if(head.data == element && head == prev){
+        } else if (head.data == element) {
             head = head.next;
         }
     }
+
     public void removeAll() {
         if (head == null) {
             return;

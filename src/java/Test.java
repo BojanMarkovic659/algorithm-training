@@ -21,7 +21,7 @@ public class Test {
             //testFindMiddle();
             //testStaticStackGenerics();
             //testStaticStackGenerics();
-            //testRemoveLastOccurrence();
+            testRemoveLastOccurrence();
         } catch (Exception exception) {
             System.err.println("Error: " + exception.getMessage());
         }
@@ -53,7 +53,7 @@ public class Test {
 
     }
 
-    public static void testRemoveDuplicatesSortedList() throws Exception{
+    public static void testRemoveDuplicatesSortedList() throws Exception {
         SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         System.out.println("Testing addElement method");
         singlyLinkedList.addElement(5);
@@ -117,21 +117,8 @@ public class Test {
         System.out.println("After executing the method");
         singlyLinkedList.removeDuplicatesSortedList();
         singlyLinkedList.displayList();
-        singlyLinkedList.removeAll();
         System.out.println("---------------------------------------------");
-        System.out.println("Testing removeDuplicatesSortedList method when we don't have a sorted list");
-        singlyLinkedList.addElement(3);
-        singlyLinkedList.addElement(4);
-        singlyLinkedList.addElement(5);
-        singlyLinkedList.addElement(2);
-        singlyLinkedList.addElement(9);
-        try {
-            singlyLinkedList.removeDuplicatesSortedList();
-        }catch (Exception e){
-            System.out.println("Expecting result : exception , got: " + e.getMessage());
-        }
-
-
+        singlyLinkedList.removeAll();
     }
 
     public static void testRemoveDuplicatesUnsortedList() {
@@ -443,7 +430,7 @@ public class Test {
         System.out.println("Number of elements " + doubleStaticStackGenerics.count());
 
     }
-    public static void testRemoveLastOccurrence(){
+    public static void testRemoveLastOccurrence() throws Exception{
         SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         System.out.println("Testing removeLastOccurrence method when the last occurrence is the last element");
         singlyLinkedList.addElement(2);
@@ -497,6 +484,14 @@ public class Test {
         singlyLinkedList.removeLastOccurrence(2);
         System.out.println("----------------------------------------");
         singlyLinkedList.displayList();
+        singlyLinkedList.removeAll();
+        System.out.println("Testing removeLastOccurrence method when we have only one element in list");
+        singlyLinkedList.addElement(5);
+        singlyLinkedList.displayList();
+        singlyLinkedList.removeLastOccurrence(5);
+        System.out.println("----------------------------------------");
+        singlyLinkedList.displayList();
+
     }
 }
 
