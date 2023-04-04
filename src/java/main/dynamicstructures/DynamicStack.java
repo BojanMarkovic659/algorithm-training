@@ -1,6 +1,6 @@
-package dynamicstructures;
+package main.dynamicstructures;
 
-import definitions.IStack;
+import main.definitions.IStack;
 
 public class DynamicStack implements IStack {
 
