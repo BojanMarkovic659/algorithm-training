@@ -1,3 +1,4 @@
+import test.dynamicstructures.DynamicStackTest;
 import test.dynamicstructures.SinglyLinkedListTest;
 import test.searchalgorithms.SearchAlgorithmsTest;
 import test.sorting.SortingAlgorithmsTest;
@@ -17,6 +18,8 @@ public class Test {
         staticStackTest.testAll();
         StaticStackGenericsTest staticStackGenericsTest = new StaticStackGenericsTest();
         staticStackGenericsTest.testAll();
+        DynamicStackTest dynamicStackTest = new DynamicStackTest();
+        dynamicStackTest.testAll();
 
     }
 }
