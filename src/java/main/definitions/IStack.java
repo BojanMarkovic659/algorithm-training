@@ -1,4 +1,4 @@
-package definitions;
+package main.definitions;
 
 public interface IStack {
     void push(int element) throws Exception;

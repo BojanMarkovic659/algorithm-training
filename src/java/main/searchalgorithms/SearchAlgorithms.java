@@ -1,4 +1,4 @@
-package searchalgorithms;
+package main.searchalgorithms;
 
 public class SearchAlgorithms {
 

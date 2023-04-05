@@ -1,4 +1,4 @@
-package dynamicstructures;
+package main.dynamicstructures;
 
 
 import java.util.HashSet;

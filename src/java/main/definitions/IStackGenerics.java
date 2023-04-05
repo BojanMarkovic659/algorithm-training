@@ -1,4 +1,4 @@
-package definitions;
+package main.definitions;
 
 public interface IStackGenerics<T> {
     void push(T element) throws Exception;
