@@ -1,3 +1,4 @@
+import main.recursion.HanoiTowers;
 import test.dynamicstructures.DynamicStackTest;
 import test.dynamicstructures.SinglyLinkedListTest;
 import test.searchalgorithms.SearchAlgorithmsTest;
@@ -20,6 +21,8 @@ public class Test {
         staticStackGenericsTest.testAll();
         DynamicStackTest dynamicStackTest = new DynamicStackTest();
         dynamicStackTest.testAll();
+        HanoiTowers hanoiTowers = new HanoiTowers();
+        hanoiTowers.solve(3);
 
     }
 }
